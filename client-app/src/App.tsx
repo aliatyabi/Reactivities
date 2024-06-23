@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import { Button, Header, List, ListItem } from 'semantic-ui-react';
+import { title } from 'process';
 
 function App() {
   const [activities, setActivities] = useState([]);
@@ -10,9 +11,9 @@ function App() {
   useEffect(() => {
     axios.get('http://localhost:5000/api/activities')
     .then(response => {
-      setActivities(response.data);
+      setActivities(response.data)
     })
-  }, [])
+  }, []);
 
   return (
     <div>
